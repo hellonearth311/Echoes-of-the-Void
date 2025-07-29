@@ -1,13 +1,17 @@
 package net.hellonearth311.echoesofthevoid.registries;
 
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.hellonearth311.echoesofthevoid.EchoesOfTheVoid;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
+import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 import java.util.function.Function;
@@ -25,12 +29,27 @@ public class ModItems {
     }
     // register echo locator(s)
     public static final Item END_ECHO_LOCATOR = register("end_echo_locator", Item::new, new Item.Settings().maxCount(1));
+    public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY =
+            RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(EchoesOfTheVoid.MOD_ID, "item_group"));
+
+    // register item group
+    public static final ItemGroup CUSTOM_ITEM_GROUP = Registry.register(
+            Registries.ITEM_GROUP,
+            CUSTOM_ITEM_GROUP_KEY,
+            FabricItemGroup.builder()
+                    .icon(() -> new ItemStack(ModItems.END_ECHO_LOCATOR))
+                    .displayName(Text.translatable("itemGroup.echoes_of_the_void.item_group"))
+                    .build()
+    );
+
 
     public static void initialize() {
-        EchoesOfTheVoid.LOGGER.info("Registering items for Echoes of the Void");
+        EchoesOfTheVoid.LOGGER.info("Registering items and item groups for Echoes of the Void");
 
-        // add to an item group
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register((itemGroup) -> itemGroup.add(END_ECHO_LOCATOR));
+        // register items to the group
+        ItemGroupEvents.modifyEntriesEvent(CUSTOM_ITEM_GROUP_KEY).register(itemGroup -> {
+            itemGroup.add(END_ECHO_LOCATOR);
+        });
 
     }
 }
