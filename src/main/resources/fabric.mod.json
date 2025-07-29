@@ -3,7 +3,7 @@
 	"id": "echoesofthevoid",
 	"version": "${version}",
 	"name": "Echoes of the Void",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "This is not an example description! Tell everyone what your mod is about!",
 	"authors": [
 		"Me!"
 	],
