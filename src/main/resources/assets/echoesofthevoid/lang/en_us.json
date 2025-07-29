@@ -1,3 +1,6 @@
 {
-  "item.echoesofthevoid.end_echo_locator": "End Echo Locator"
+  "item.echoesofthevoid.end_echo_locator": "End Echo Locator",
+  "item.echoesofthevoid.nether_echo_locator": "Nether Echo Locator",
+  "item.echoesofthevoid.overworld_echo_locator": "Overworld Echo Locator",
+  "itemGroup.echoes_of_the_void.item_group": "Echoes of the Void"
 }

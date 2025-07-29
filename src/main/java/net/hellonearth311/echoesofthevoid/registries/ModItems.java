@@ -29,6 +29,10 @@ public class ModItems {
     }
     // register echo locator(s)
     public static final Item END_ECHO_LOCATOR = register("end_echo_locator", Item::new, new Item.Settings().maxCount(1));
+    public static final Item NETHER_ECHO_LOCATOR = register("nether_echo_locator", Item::new, new Item.Settings().maxCount(1));
+    public static final Item OVERWORLD_ECHO_LOCATOR = register("overworld_echo_locator", Item::new, new Item.Settings().maxCount(1));
+
+
     public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY =
             RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(EchoesOfTheVoid.MOD_ID, "item_group"));
 
@@ -49,6 +53,8 @@ public class ModItems {
         // register items to the group
         ItemGroupEvents.modifyEntriesEvent(CUSTOM_ITEM_GROUP_KEY).register(itemGroup -> {
             itemGroup.add(END_ECHO_LOCATOR);
+            itemGroup.add(NETHER_ECHO_LOCATOR);
+            itemGroup.add(OVERWORLD_ECHO_LOCATOR);
         });
 
     }
