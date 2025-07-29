@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "echoesofthevoid",
+	"version": "${version}",
+	"name": "Echoes of the Void",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/echoesofthevoid/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.hellonearth311.echoesofthevoid.EchoesOfTheVoid"
+		],
+		"client": [
+			"net.hellonearth311.echoesofthevoid.EchoesOfTheVoidClient"
+		]
+	},
+	"mixins": [
+		"echoesofthevoid.mixins.json",
+		{
+			"config": "echoesofthevoid.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.8",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
