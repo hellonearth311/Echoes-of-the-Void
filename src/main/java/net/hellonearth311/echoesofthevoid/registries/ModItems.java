@@ -3,6 +3,9 @@ package net.hellonearth311.echoesofthevoid.registries;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.hellonearth311.echoesofthevoid.EchoesOfTheVoid;
+import net.hellonearth311.echoesofthevoid.registries.custom.EndEchoLocator;
+import net.hellonearth311.echoesofthevoid.registries.custom.NetherEchoLocator;
+import net.hellonearth311.echoesofthevoid.registries.custom.OverworldEchoLocator;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
@@ -13,6 +16,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 
 import java.util.function.Function;
 
@@ -28,9 +32,23 @@ public class ModItems {
         return item;
     }
     // register echo locator(s)
-    public static final Item END_ECHO_LOCATOR = register("end_echo_locator", Item::new, new Item.Settings().maxCount(1));
-    public static final Item NETHER_ECHO_LOCATOR = register("nether_echo_locator", Item::new, new Item.Settings().maxCount(1));
-    public static final Item OVERWORLD_ECHO_LOCATOR = register("overworld_echo_locator", Item::new, new Item.Settings().maxCount(1));
+    public static final Item END_ECHO_LOCATOR = register(
+            "end_echo_locator",
+            EndEchoLocator::new,
+            new Item.Settings().maxDamage(200).rarity(Rarity.RARE)
+    );
+
+    public static final Item NETHER_ECHO_LOCATOR = register(
+            "nether_echo_locator",
+            NetherEchoLocator::new,
+            new Item.Settings().maxDamage(200).rarity(Rarity.RARE)
+    );
+
+    public static final Item OVERWORLD_ECHO_LOCATOR = register(
+            "overworld_echo_locator",
+            OverworldEchoLocator::new,
+            new Item.Settings().maxDamage(200).rarity(Rarity.RARE)
+    );
 
 
     public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY =
