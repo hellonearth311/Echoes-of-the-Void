@@ -65,7 +65,7 @@ public class ModItems {
     );
 
 
-    public static void initialize() {
+    public static void initializeModItems() {
         EchoesOfTheVoid.LOGGER.info("Registering items and item groups for Echoes of the Void");
 
         // register items to the group

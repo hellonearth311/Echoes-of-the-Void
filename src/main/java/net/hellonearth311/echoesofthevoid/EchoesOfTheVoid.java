@@ -13,6 +13,6 @@ public class EchoesOfTheVoid implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Hello Echoes of the Void world!");
-		ModItems.initialize();
+		ModItems.initializeModItems();
 	}
 }
