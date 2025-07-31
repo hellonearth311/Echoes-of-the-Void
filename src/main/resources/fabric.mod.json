@@ -20,6 +20,9 @@
 		],
 		"client": [
 			"net.hellonearth311.echoesofthevoid.EchoesOfTheVoidClient"
+		],
+		"terrablender": [
+			"net.hellonearth311.echoesofthevoid.registries.EchoesOfTheVoidTerraBlenderAPI"
 		]
 	},
 	"mixins": [
@@ -34,6 +37,7 @@
 		"minecraft": "~1.21.8",
 		"java": ">=21",
 		"fabric-api": "*",
+		"terrablender": "*"
 	},
 	"suggests": {
 		"modmenu": "*",
