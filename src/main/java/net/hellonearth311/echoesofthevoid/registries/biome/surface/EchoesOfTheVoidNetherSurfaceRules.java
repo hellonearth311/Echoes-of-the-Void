@@ -10,13 +10,13 @@ import net.minecraft.util.math.VerticalSurfaceType;
 import net.minecraft.util.math.noise.DoublePerlinNoiseSampler;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.surfacebuilder.MaterialRules;
-import net.minecraft.world.gen.surfacebuilder.MaterialRules.MaterialRule;
 import net.minecraft.world.gen.surfacebuilder.MaterialRules.MaterialCondition;
+import net.minecraft.world.gen.surfacebuilder.MaterialRules.MaterialRule;
 
-public class EchoesOfTheVoidSurfaceRules {
+public class EchoesOfTheVoidNetherSurfaceRules {
     // block rules
-    private static final MaterialRule END_STONE = makeStateRule(Blocks.END_STONE);
-    private static final MaterialRule END_STONE_BRICKS = makeStateRule(Blocks.END_STONE_BRICKS);
+    private static final MaterialRule NETHERRACK = makeStateRule(Blocks.NETHERRACK);
+    private static final MaterialRule NETHER_BRICKS = makeStateRule(Blocks.NETHER_BRICKS);
 
     // noise params
     private static final RegistryKey<DoublePerlinNoiseSampler.NoiseParameters> CAVE_LAYER_NOISE =
@@ -34,23 +34,23 @@ public class EchoesOfTheVoidSurfaceRules {
         MaterialCondition highElevationCondition = MaterialRules.aboveY(YOffset.fixed(60), 0);
 
         MaterialRule mixedSurface = MaterialRules.sequence(
-                MaterialRules.condition(highElevationCondition, END_STONE_BRICKS),
+                MaterialRules.condition(highElevationCondition, NETHER_BRICKS),
 
                 MaterialRules.condition(onFloorCondition,
-                    MaterialRules.condition(noiseCondition, END_STONE_BRICKS)
+                    MaterialRules.condition(noiseCondition, NETHER_BRICKS)
                 ),
 
                 MaterialRules.condition(nearSurfaceCondition,
-                    MaterialRules.condition(surfaceNoiseCondition, END_STONE_BRICKS)
+                    MaterialRules.condition(surfaceNoiseCondition, NETHER_BRICKS)
                 ),
 
-                MaterialRules.condition(randomBricksCondition, END_STONE_BRICKS),
+                MaterialRules.condition(randomBricksCondition, NETHER_BRICKS),
 
-                END_STONE
+                NETHERRACK
         );
 
         return MaterialRules.sequence(
-                MaterialRules.condition(MaterialRules.biome(ModBiomes.END_ECHO), mixedSurface)
+                MaterialRules.condition(MaterialRules.biome(ModBiomes.NETHER_ECHO), mixedSurface)
         );
     }
 

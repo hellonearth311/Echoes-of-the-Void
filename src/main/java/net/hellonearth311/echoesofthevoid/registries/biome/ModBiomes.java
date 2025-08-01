@@ -10,6 +10,9 @@ public class ModBiomes {
     public static final RegistryKey<Biome> END_ECHO = RegistryKey.of(RegistryKeys.BIOME, 
             Identifier.of(EchoesOfTheVoid.MOD_ID, "end_echo"));
 
+    public static final RegistryKey<Biome> NETHER_ECHO = RegistryKey.of(RegistryKeys.BIOME,
+            Identifier.of(EchoesOfTheVoid.MOD_ID, "nether_echo"));
+
     public static void registerBiomes() {
         EchoesOfTheVoid.LOGGER.info("Registering mod biomes for " + EchoesOfTheVoid.MOD_ID);
     }

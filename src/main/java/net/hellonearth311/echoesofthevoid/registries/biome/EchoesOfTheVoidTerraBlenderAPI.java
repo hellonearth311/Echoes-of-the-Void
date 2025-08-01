@@ -1,7 +1,10 @@
 package net.hellonearth311.echoesofthevoid.registries.biome;
 
 import net.hellonearth311.echoesofthevoid.EchoesOfTheVoid;
-import net.hellonearth311.echoesofthevoid.registries.biome.surface.EchoesOfTheVoidSurfaceRules;
+import net.hellonearth311.echoesofthevoid.registries.biome.region.EndEchoRegion;
+import net.hellonearth311.echoesofthevoid.registries.biome.region.NetherEchoRegion;
+import net.hellonearth311.echoesofthevoid.registries.biome.surface.EchoesOfTheVoidEndSurfaceRules;
+import net.hellonearth311.echoesofthevoid.registries.biome.surface.EchoesOfTheVoidNetherSurfaceRules;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.source.util.MultiNoiseUtil;
 import terrablender.api.*;
@@ -25,31 +28,12 @@ public class EchoesOfTheVoidTerraBlenderAPI implements TerraBlenderApi {
     @Override
     public void onTerraBlenderInitialized()
     {
-        Regions.register(new EndEchoRegion(Identifier.of(EchoesOfTheVoid.MOD_ID, "end_echo_region"), 6));
-        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD , EchoesOfTheVoid.MOD_ID, EchoesOfTheVoidSurfaceRules.makeRules());
+        // register end echo region + surface rules
+        Regions.register(new EndEchoRegion(Identifier.of(EchoesOfTheVoid.MOD_ID, "end_echo_region"), 2));
+        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, EchoesOfTheVoid.MOD_ID, EchoesOfTheVoidEndSurfaceRules.makeRules());
+
+        // register nether echo region + surface rules
+        Regions.register(new NetherEchoRegion(Identifier.of(EchoesOfTheVoid.MOD_ID, "nether_echo_region"), 2));
+        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, EchoesOfTheVoid.MOD_ID, EchoesOfTheVoidNetherSurfaceRules.makeRules());
     }
-
-    public class EndEchoRegion extends Region {
-        public EndEchoRegion(Identifier id, int weight)
-        {
-            super(id, RegionType.OVERWORLD, weight);
-        }
-
-        @Override
-        public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
-            VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
-
-            new ParameterPointListBuilder()
-                    .temperature(Temperature.span(Temperature.COOL, Temperature.NEUTRAL))
-                    .humidity(Humidity.span(Humidity.NEUTRAL, Humidity.HUMID))
-                    .continentalness(Continentalness.INLAND)
-                    .erosion(Erosion.FULL_RANGE)
-                    .depth(Depth.SURFACE, Depth.FLOOR)
-                    .weirdness(Weirdness.PEAK_NORMAL)
-                    .build().forEach(point -> builder.add(point, ModBiomes.END_ECHO));
-
-            builder.build().forEach(mapper);
-        }
-    }
-
 }
