@@ -1,8 +1,10 @@
-package net.hellonearth311.echoesofthevoid.registries;
+package net.hellonearth311.echoesofthevoid.registries.biome;
 
 import net.hellonearth311.echoesofthevoid.EchoesOfTheVoid;
+import net.hellonearth311.echoesofthevoid.registries.biome.surface.EchoesOfTheVoidSurfaceRules;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.source.util.MultiNoiseUtil;
+import terrablender.api.*;
 import terrablender.api.ParameterUtils.Continentalness;
 import terrablender.api.ParameterUtils.Depth;
 import terrablender.api.ParameterUtils.Erosion;
@@ -10,11 +12,6 @@ import terrablender.api.ParameterUtils.Humidity;
 import terrablender.api.ParameterUtils.ParameterPointListBuilder;
 import terrablender.api.ParameterUtils.Temperature;
 import terrablender.api.ParameterUtils.Weirdness;
-import terrablender.api.Region;
-import terrablender.api.RegionType;
-import terrablender.api.Regions;
-import terrablender.api.TerraBlenderApi;
-import terrablender.api.VanillaParameterOverlayBuilder;
 
 import java.util.function.Consumer;
 
@@ -28,7 +25,8 @@ public class EchoesOfTheVoidTerraBlenderAPI implements TerraBlenderApi {
     @Override
     public void onTerraBlenderInitialized()
     {
-        Regions.register(new EndEchoRegion(Identifier.of(EchoesOfTheVoid.MOD_ID, "end_echo_region"), 2));
+        Regions.register(new EndEchoRegion(Identifier.of(EchoesOfTheVoid.MOD_ID, "end_echo_region"), 6));
+        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD , EchoesOfTheVoid.MOD_ID, EchoesOfTheVoidSurfaceRules.makeRules());
     }
 
     public class EndEchoRegion extends Region {
@@ -42,7 +40,7 @@ public class EchoesOfTheVoidTerraBlenderAPI implements TerraBlenderApi {
             VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
 
             new ParameterPointListBuilder()
-                    .temperature(Temperature.span(Temperature.COOL, Temperature.ICY))
+                    .temperature(Temperature.span(Temperature.COOL, Temperature.NEUTRAL))
                     .humidity(Humidity.span(Humidity.NEUTRAL, Humidity.HUMID))
                     .continentalness(Continentalness.INLAND)
                     .erosion(Erosion.FULL_RANGE)

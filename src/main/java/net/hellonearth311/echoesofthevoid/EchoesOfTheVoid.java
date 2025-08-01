@@ -2,8 +2,9 @@ package net.hellonearth311.echoesofthevoid;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.hellonearth311.echoesofthevoid.registries.ModBiomes;
+import net.hellonearth311.echoesofthevoid.registries.biome.ModBiomes;
 import net.hellonearth311.echoesofthevoid.registries.ModItems;
+import net.hellonearth311.echoesofthevoid.registries.biome.surface.EchoesOfTheVoidSurfaceRules;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

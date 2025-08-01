@@ -22,7 +22,7 @@
 			"net.hellonearth311.echoesofthevoid.EchoesOfTheVoidClient"
 		],
 		"terrablender": [
-			"net.hellonearth311.echoesofthevoid.registries.EchoesOfTheVoidTerraBlenderAPI"
+			"net.hellonearth311.echoesofthevoid.registries.biome.EchoesOfTheVoidTerraBlenderAPI"
 		]
 	},
 	"mixins": [

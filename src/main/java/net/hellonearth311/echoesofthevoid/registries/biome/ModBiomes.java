@@ -1,4 +1,4 @@
-package net.hellonearth311.echoesofthevoid.registries;
+package net.hellonearth311.echoesofthevoid.registries.biome;
 
 import net.hellonearth311.echoesofthevoid.EchoesOfTheVoid;
 import net.minecraft.registry.RegistryKey;
