@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:overworld",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "preset": "minecraft:overworld"
+    },
+    "settings": "minecraft:overworld",
+    "structure_sets": [
+      "minecraft:villages",
+      "minecraft:ancient_cities",
+      "minecraft:bastions",
+      "minecraft:buried_treasures",
+      "minecraft:end_cities",
+      "minecraft:mineshafts",
+      "minecraft:monuments",
+      "minecraft:nether_complexes",
+      "minecraft:nether_fossils",
+      "minecraft:ocean_ruins",
+      "minecraft:pillager_outposts",
+      "minecraft:ruined_portals",
+      "minecraft:shipwrecks",
+      "minecraft:strongholds",
+      "minecraft:swamp_huts",
+      "minecraft:trail_ruins",
+      "minecraft:trial_chambers",
+      "echoesofthevoid:end_echo_set"
+    ]
+  }
+}
+

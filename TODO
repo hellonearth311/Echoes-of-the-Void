@@ -1,3 +1,4 @@
-- add the biomes
-- make the items locate the nearest respective echo
-- add the mobs
+- make the rest of the structures spawn in the correct dimensions
+- make structure loot tables by /give myself a chest with my custom loot table
+- do the spawners INSIDE the actual structure with a random mob and then replace it later when i have my custom mob
+- make custom mobs

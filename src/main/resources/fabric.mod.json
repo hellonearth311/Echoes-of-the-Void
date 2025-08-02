@@ -5,11 +5,11 @@
 	"name": "Echoes of the Void",
 	"description": "This is not an example description! Tell everyone what your mod is about!",
 	"authors": [
-		"Me!"
+		"Swarit Narang"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/hellonearth311/echoes-of-the-void",
+		"sources": "https://github.com/hellonearth311/echoes-of-the-void"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/echoesofthevoid/icon.png",
@@ -33,7 +33,7 @@
 		"fabricloader": ">=0.16.14",
 		"minecraft": "~1.21.8",
 		"java": ">=21",
-		"fabric-api": "*",
+		"fabric-api": "*"
 	},
 	"suggests": {
 		"modmenu": "*",

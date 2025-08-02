@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:jigsaw",
+  "biomes": [
+    "minecraft:badlands",
+    "minecraft:dark_forest",
+    "minecraft:desert",
+    "minecraft:windswept_hills"
+  ],
+  "step": "surface_structures",
+  "terrain_adaptation": "beard_thin",
+  "spawn_overrides": {},
+  "start_pool": "echoesofthevoid:end_echo_pool",
+  "size": 1,
+  "start_height": {
+    "absolute": 0
+  },
+  "project_start_to_heightmap": "WORLD_SURFACE",
+  "max_distance_from_center": 116,
+  "use_expansion_hack": false,
+  "liquid_settings": "ignore_waterlogging"
+}
