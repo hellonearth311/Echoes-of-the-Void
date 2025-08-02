@@ -2,7 +2,6 @@ package net.hellonearth311.echoesofthevoid;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.hellonearth311.echoesofthevoid.registries.biome.ModBiomes;
 import net.hellonearth311.echoesofthevoid.registries.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +12,6 @@ public class EchoesOfTheVoid implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		ModBiomes.registerBiomes();
 		ModItems.initializeModItems();
 		LOGGER.info("Echoes of the Void loaded successfully!");
 	}
