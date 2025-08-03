@@ -10,7 +10,6 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.text.Text;
 
 public class EndEchoLocator extends Item {
     public EndEchoLocator(Settings settings) {
