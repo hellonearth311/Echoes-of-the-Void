@@ -26,7 +26,7 @@ public class OverworldEchoLocator extends Item {
 
             ServerCommandSource source = serverPlayer.getCommandSource().withLevel(2);
 
-            server.getCommandManager().executeWithPrefix(source, "locate biome minecraft:badlands");
+            server.getCommandManager().executeWithPrefix(source, "locate structure echoesofthevoid:overworld_echo_struct");
 
             stack.damage(1, user);
         }

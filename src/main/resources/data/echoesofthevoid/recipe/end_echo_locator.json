@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "echoesofthevoid:end_echo_locator_shard",
+    "X": "minecraft:compass"
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "echoesofthevoid:end_echo_locator"
+  }
+}

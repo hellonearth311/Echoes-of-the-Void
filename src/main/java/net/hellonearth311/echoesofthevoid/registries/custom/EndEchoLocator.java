@@ -26,7 +26,7 @@ public class EndEchoLocator extends Item {
 
             ServerCommandSource source = serverPlayer.getCommandSource().withLevel(2);
 
-            server.getCommandManager().executeWithPrefix(source, "locate biome minecraft:plains");
+            server.getCommandManager().executeWithPrefix(source, "locate structure echoesofthevoid:end_echo_struct");
 
             stack.damage(1, user);
         }
