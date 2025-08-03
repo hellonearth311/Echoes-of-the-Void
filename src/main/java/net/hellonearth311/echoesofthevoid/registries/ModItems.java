@@ -29,23 +29,42 @@ public class ModItems {
 
         return item;
     }
-    // register echo locator(s)
+    // register echo locator(s) and their shards
+
+    // end
     public static final Item END_ECHO_LOCATOR = register(
             "end_echo_locator",
             EndEchoLocator::new,
-            new Item.Settings().maxDamage(200).rarity(Rarity.RARE)
+            new Item.Settings().maxDamage(200).rarity(Rarity.RARE).fireproof()
+    );
+    public static final Item END_ECHO_LOCATOR_SHARD = register(
+            "end_echo_locator_shard",
+            Item::new,
+            new Item.Settings().fireproof().rarity(Rarity.UNCOMMON)
     );
 
+    // nether
     public static final Item NETHER_ECHO_LOCATOR = register(
             "nether_echo_locator",
             NetherEchoLocator::new,
-            new Item.Settings().maxDamage(200).rarity(Rarity.RARE)
+            new Item.Settings().maxDamage(200).rarity(Rarity.RARE).fireproof()
+    );
+    public static final Item NETHER_ECHO_LOCATOR_SHARD = register(
+            "nether_echo_locator_shard",
+            Item::new,
+            new Item.Settings().fireproof().rarity(Rarity.UNCOMMON)
     );
 
+    // overworld
     public static final Item OVERWORLD_ECHO_LOCATOR = register(
             "overworld_echo_locator",
             OverworldEchoLocator::new,
-            new Item.Settings().maxDamage(200).rarity(Rarity.RARE)
+            new Item.Settings().maxDamage(200).rarity(Rarity.RARE).fireproof()
+    );
+    public static final Item OVERWORLD_ECHO_LOCATOR_SHARD = register(
+            "overworld_echo_locator_shard",
+            Item::new,
+            new Item.Settings().fireproof().rarity(Rarity.UNCOMMON)
     );
 
 
@@ -71,6 +90,9 @@ public class ModItems {
             itemGroup.add(END_ECHO_LOCATOR);
             itemGroup.add(NETHER_ECHO_LOCATOR);
             itemGroup.add(OVERWORLD_ECHO_LOCATOR);
+            itemGroup.add(END_ECHO_LOCATOR_SHARD);
+            itemGroup.add(NETHER_ECHO_LOCATOR_SHARD);
+            itemGroup.add(OVERWORLD_ECHO_LOCATOR_SHARD);
         });
 
     }
