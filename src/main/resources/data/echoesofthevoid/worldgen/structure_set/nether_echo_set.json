@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "echoesofthevoid:nether_echo_struct",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 60,
+    "separation": 20,
+    "salt": 19238,
+    "frequency_reduction_method": "default"
+  }
+}
