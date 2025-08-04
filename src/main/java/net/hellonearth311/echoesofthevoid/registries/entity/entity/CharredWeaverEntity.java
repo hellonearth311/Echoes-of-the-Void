@@ -17,13 +17,17 @@ public class CharredWeaverEntity extends SpiderEntity {
         super(entityType, world);
         this.setCustomName(null);
         this.setCustomNameVisible(false);
-
     }
 
     // goals? what goals?
     @Override
     protected void initGoals() {
         super.initGoals();
+    }
+
+    @Override
+    public boolean isFireImmune() {
+        return true;
     }
 
     @Override
@@ -43,7 +47,7 @@ public class CharredWeaverEntity extends SpiderEntity {
 
         // flame particles
         if (this.getWorld().isClient) {
-            getWorld().addParticleClient(ParticleTypes.FLAME,
+            this.getWorld().addParticleClient(ParticleTypes.FLAME,
                     this.getX() + (this.random.nextDouble() - 0.5) * 0.5,
                     this.getY() + 0.5,
                     this.getZ() + (this.random.nextDouble() - 0.5) * 0.5,
@@ -55,7 +59,6 @@ public class CharredWeaverEntity extends SpiderEntity {
     public static DefaultAttributeContainer.Builder createAttributes() {
         return SpiderEntity.createSpiderAttributes()
             .add(EntityAttributes.MAX_HEALTH, 32.0)
-            .add(EntityAttributes.ATTACK_DAMAGE, 8.0)
-            .add(EntityAttributes.BURNING_TIME, 100);
+            .add(EntityAttributes.ATTACK_DAMAGE, 8.0);
     }
 }
