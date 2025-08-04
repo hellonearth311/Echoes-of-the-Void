@@ -6,9 +6,8 @@ import net.hellonearth311.echoesofthevoid.EchoesOfTheVoid;
 import net.hellonearth311.echoesofthevoid.registries.custom.EndEchoLocator;
 import net.hellonearth311.echoesofthevoid.registries.custom.NetherEchoLocator;
 import net.hellonearth311.echoesofthevoid.registries.custom.OverworldEchoLocator;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
+import net.hellonearth311.echoesofthevoid.registries.entity.ModEntities;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -19,10 +18,10 @@ import net.minecraft.util.Rarity;
 import java.util.function.Function;
 
 public class ModItems {
-    public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
+    public static <T extends Item> T register(String name, Function<Item.Settings, T> itemFactory, Item.Settings settings) {
         // Create item
         RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(EchoesOfTheVoid.MOD_ID, name));
-        Item item = itemFactory.apply(settings.registryKey(itemKey));
+        T item = itemFactory.apply(settings.registryKey(itemKey));
 
         // Register
         Registry.register(Registries.ITEM, itemKey, item);
@@ -71,7 +70,23 @@ public class ModItems {
     public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY =
             RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(EchoesOfTheVoid.MOD_ID, "item_group"));
 
-    // register item group
+    // spawn eggs
+    public static final SpawnEggItem VOID_WEAVER_SPAWN_EGG = register("void_weaver_spawn_egg",
+            settings -> new SpawnEggItem(ModEntities.VOID_WEAVER_ENTITY, settings),
+            new Item.Settings()
+    );
+
+    public static final SpawnEggItem CHARRED_WEAVER_SPAWN_EGG = register("charred_weaver_spawn_egg",
+            settings -> new SpawnEggItem(ModEntities.CHARRED_WEAVER_ENTITY, settings),
+            new Item.Settings()
+    );
+
+    public static final SpawnEggItem ELDER_WEAVER_SPAWN_EGG = register("elder_weaver_spawn_egg",
+            settings -> new SpawnEggItem(ModEntities.ELDER_WEAVER_ENTITY, settings),
+            new Item.Settings()
+    );
+
+    // register item groups
     public static final ItemGroup CUSTOM_ITEM_GROUP = Registry.register(
             Registries.ITEM_GROUP,
             CUSTOM_ITEM_GROUP_KEY,
@@ -93,6 +108,12 @@ public class ModItems {
             itemGroup.add(END_ECHO_LOCATOR_SHARD);
             itemGroup.add(NETHER_ECHO_LOCATOR_SHARD);
             itemGroup.add(OVERWORLD_ECHO_LOCATOR_SHARD);
+        });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(itemGroup -> {
+            itemGroup.add(VOID_WEAVER_SPAWN_EGG);
+            itemGroup.add(CHARRED_WEAVER_SPAWN_EGG);
+            itemGroup.add(ELDER_WEAVER_SPAWN_EGG);
         });
 
     }
