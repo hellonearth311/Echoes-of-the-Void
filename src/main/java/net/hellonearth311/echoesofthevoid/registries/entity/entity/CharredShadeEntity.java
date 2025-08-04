@@ -49,19 +49,22 @@ public class CharredShadeEntity extends SkeletonEntity {
     public void tick() {
         super.tick();
 
-        // explosion
-        if (!this.getWorld().isClient && this.getTarget() != null && this.random.nextInt(300) == 0) {
-            // make it invincible while the TNT explodes
+        // fire
+        if (!this.getWorld().isClient && this.getTarget() != null && this.random.nextInt(50) == 0) {
             this.setInvulnerable(!this.isInvulnerable());
-            TntEntity tnt = new TntEntity(this.getWorld(), this.getX(), this.getY() + 1.0, this.getZ(), this);
-            tnt.setFuse(1);
+            LivingEntity target = this.getTarget();
 
-            this.getWorld().spawnEntity(tnt);
+            Vec3d direction = target.getPos().subtract(this.getPos()).normalize();
+
+            FireballEntity fireball = new FireballEntity(this.getWorld(), this, direction, 2);
+            fireball.setPosition(this.getX(), this.getY() + 1.0, this.getZ());
+
+            this.getWorld().spawnEntity(fireball);
         }
 
-        // dirt particles
+        // flame particles
         if (this.getWorld().isClient) {
-            this.getWorld().addParticleClient(new BlockStateParticleEffect(ParticleTypes.BLOCK, Blocks.DIRT.getDefaultState()),
+            this.getWorld().addParticleClient(ParticleTypes.FLAME,
                     this.getX() + (this.random.nextDouble() - 0.5) * 0.5,
                     this.getY() + 0.5,
                     this.getZ() + (this.random.nextDouble() - 0.5) * 0.5,

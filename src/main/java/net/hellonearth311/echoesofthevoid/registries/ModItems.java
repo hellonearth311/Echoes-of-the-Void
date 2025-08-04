@@ -75,14 +75,26 @@ public class ModItems {
             settings -> new SpawnEggItem(ModEntities.VOID_WEAVER_ENTITY, settings),
             new Item.Settings()
     );
+    public static final SpawnEggItem VOID_SHADE_SPAWN_EGG = register("void_shade_spawn_egg",
+            settings -> new SpawnEggItem(ModEntities.VOID_SHADE_ENTITY, settings),
+            new Item.Settings()
+    );
 
     public static final SpawnEggItem CHARRED_WEAVER_SPAWN_EGG = register("charred_weaver_spawn_egg",
             settings -> new SpawnEggItem(ModEntities.CHARRED_WEAVER_ENTITY, settings),
             new Item.Settings()
     );
+    public static final SpawnEggItem CHARRED_SHADE_SPAWN_EGG = register("charred_shade_spawn_egg",
+            settings -> new SpawnEggItem(ModEntities.CHARRED_SHADE_ENTITY, settings),
+            new Item.Settings()
+    );
 
     public static final SpawnEggItem ELDER_WEAVER_SPAWN_EGG = register("elder_weaver_spawn_egg",
             settings -> new SpawnEggItem(ModEntities.ELDER_WEAVER_ENTITY, settings),
+            new Item.Settings()
+    );
+    public static final SpawnEggItem ELDER_SHADE_SPAWN_EGG = register("elder_shade_spawn_egg",
+            settings -> new SpawnEggItem(ModEntities.ELDER_SHADE_ENTITY, settings),
             new Item.Settings()
     );
 
@@ -100,7 +112,7 @@ public class ModItems {
     public static void initializeModItems() {
         EchoesOfTheVoid.LOGGER.info("Registering items and item groups for Echoes of the Void");
 
-        // register items to the group
+        // register items to the groups
         ItemGroupEvents.modifyEntriesEvent(CUSTOM_ITEM_GROUP_KEY).register(itemGroup -> {
             itemGroup.add(END_ECHO_LOCATOR);
             itemGroup.add(NETHER_ECHO_LOCATOR);
@@ -108,12 +120,21 @@ public class ModItems {
             itemGroup.add(END_ECHO_LOCATOR_SHARD);
             itemGroup.add(NETHER_ECHO_LOCATOR_SHARD);
             itemGroup.add(OVERWORLD_ECHO_LOCATOR_SHARD);
+            itemGroup.add(VOID_WEAVER_SPAWN_EGG);
+            itemGroup.add(CHARRED_WEAVER_SPAWN_EGG);
+            itemGroup.add(ELDER_WEAVER_SPAWN_EGG);
+            itemGroup.add(VOID_SHADE_SPAWN_EGG);
+            itemGroup.add(CHARRED_SHADE_SPAWN_EGG);
+            itemGroup.add(ELDER_SHADE_SPAWN_EGG);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(itemGroup -> {
             itemGroup.add(VOID_WEAVER_SPAWN_EGG);
             itemGroup.add(CHARRED_WEAVER_SPAWN_EGG);
             itemGroup.add(ELDER_WEAVER_SPAWN_EGG);
+            itemGroup.add(VOID_SHADE_SPAWN_EGG);
+            itemGroup.add(CHARRED_SHADE_SPAWN_EGG);
+            itemGroup.add(ELDER_SHADE_SPAWN_EGG);
         });
 
     }
