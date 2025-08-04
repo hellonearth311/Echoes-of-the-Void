@@ -7,5 +7,6 @@
   "item.echoesofthevoid.overworld_echo_locator_shard": "Overworld Echo Locator Shard",
   "itemGroup.echoes_of_the_void.item_group": "Echoes of the Void",
   "entity.echoesofthevoid.void_weaver": "Void Weaver",
-  "entity.echoesofthevoid.charred_weaver": "Charred Weaver"
+  "entity.echoesofthevoid.charred_weaver": "Charred Weaver",
+  "entity.echoesofthevoid.elder_weaver": "Elder Weaver"
 }

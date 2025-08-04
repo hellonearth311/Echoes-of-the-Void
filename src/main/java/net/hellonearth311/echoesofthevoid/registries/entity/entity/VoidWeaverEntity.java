@@ -3,6 +3,7 @@ package net.hellonearth311.echoesofthevoid.registries.entity.entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.SpiderEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particle.ParticleTypes;
@@ -81,6 +82,6 @@ public class VoidWeaverEntity extends SpiderEntity {
         return SpiderEntity.createSpiderAttributes()
             .add(EntityAttributes.MAX_HEALTH, 32.0)
             .add(EntityAttributes.ATTACK_DAMAGE, 8.0)
-            .add(EntityAttributes.SAFE_FALL_DISTANCE, 20);
+            .add(EntityAttributes.SAFE_FALL_DISTANCE, 999.0);
     }
 }
