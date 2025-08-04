@@ -1,1 +1,11 @@
 - make custom mobs
+- end mobs can tp and have better fall damage resistance
+- nether mobs can throw fire and have better fire resistance
+- overworld mobs can randomly explode and have better blast resistance
+- names
+elder_weaver
+elder_shade
+charred_weaver
+charred_shade
+void_weaver
+void_shade
