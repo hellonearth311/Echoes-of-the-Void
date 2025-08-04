@@ -75,7 +75,13 @@ public class VoidWeaverEntity extends SpiderEntity {
                         this.getZ() + offsetZ,
                         0.0, 0.02, 0.0);
             }
-        }    }
+        }
+    }
+
+    @Override
+    public boolean shouldRenderName() {
+        return false;
+    }
 
     // strong boi
     public static DefaultAttributeContainer.Builder createAttributes() {

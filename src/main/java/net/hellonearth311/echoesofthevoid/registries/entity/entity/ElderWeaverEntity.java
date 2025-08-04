@@ -48,6 +48,11 @@ public class ElderWeaverEntity extends SpiderEntity {
         }
     }
 
+    @Override
+    public boolean shouldRenderName() {
+        return false;
+    }
+
     // strong boi
     public static DefaultAttributeContainer.Builder createAttributes() {
         return SpiderEntity.createSpiderAttributes()

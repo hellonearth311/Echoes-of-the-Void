@@ -31,6 +31,11 @@ public class CharredWeaverEntity extends SpiderEntity {
     }
 
     @Override
+    public boolean shouldRenderName() {
+        return false;
+    }
+
+    @Override
     public void tick() {
         super.tick();
         // fire
