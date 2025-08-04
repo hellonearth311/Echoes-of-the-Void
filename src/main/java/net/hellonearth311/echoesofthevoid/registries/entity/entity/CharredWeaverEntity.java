@@ -40,6 +40,7 @@ public class CharredWeaverEntity extends SpiderEntity {
         super.tick();
         // fire
         if (!this.getWorld().isClient && this.getTarget() != null && this.random.nextInt(50) == 0) {
+            this.setInvulnerable(!this.isInvulnerable());
             LivingEntity target = this.getTarget();
 
             Vec3d direction = target.getPos().subtract(this.getPos()).normalize();

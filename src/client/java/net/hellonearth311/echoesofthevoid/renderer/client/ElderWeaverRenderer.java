@@ -12,7 +12,7 @@ import net.minecraft.util.Identifier;
 // extend spider renderer
 public class ElderWeaverRenderer extends LivingEntityRenderer<ElderWeaverEntity, LivingEntityRenderState, SpiderEntityModel> {
     private static final Identifier TEXTURE = Identifier.of("echoesofthevoid", "textures/entity/elder_weaver.png");
-    private static final float SCALE = 2.0f; // Double the size to match your entity dimensions
+    private static final float SCALE = 2.0f;
 
     public ElderWeaverRenderer(EntityRendererFactory.Context ctx) {
         super(ctx, new SpiderEntityModel(ctx.getPart(EntityModelLayers.SPIDER)), 1.4f * SCALE); // Scale shadow size too

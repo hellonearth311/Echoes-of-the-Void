@@ -11,5 +11,8 @@
   "itemGroup.echoes_of_the_void.item_group": "Echoes of the Void",
   "entity.echoesofthevoid.void_weaver": "Void Weaver",
   "entity.echoesofthevoid.charred_weaver": "Charred Weaver",
-  "entity.echoesofthevoid.elder_weaver": "Elder Weaver"
+  "entity.echoesofthevoid.elder_weaver": "Elder Weaver",
+  "entity.echoesofthevoid.void_shade": "Void Shade",
+  "entity.echoesofthevoid.charred_shade": "Charred Shade",
+  "entity.echoesofthevoid.elder_shade": "Elder Shade"
 }
