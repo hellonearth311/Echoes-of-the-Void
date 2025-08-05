@@ -27,5 +27,4 @@ public class VoidShadeRenderer extends LivingEntityRenderer<VoidShadeEntity, Ske
     public SkeletonEntityRenderState createRenderState() {
         return new SkeletonEntityRenderState();
     }
-
 }
