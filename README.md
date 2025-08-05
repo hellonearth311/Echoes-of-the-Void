@@ -4,5 +4,7 @@ A Minecraft mod that introduces rare structures, mysterious mobs, and powerful i
 ## Download
 [Modrinth](https://modrinth.com/mod/echoesofthevoid/versions)
 
+[CurseForge](https://curseforge.com/minecraft/mc-mods/echoes-of-the-void)
+
 [GitHub](https://github.com/hellonearth311/Echoes-of-the-Void/releases)
 
